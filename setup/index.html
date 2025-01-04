@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Setup - Georgios Dialynas-Vatsis</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    html { min-height: 100vh; }
+    body {
+      min-height: 100vh;
+      position: relative;
+      background: #001b42;
+      background: -webkit-linear-gradient(to left, #00315c, #000428);
+      background: linear-gradient(to left, #00315c, #000428);
+    }
+    .glass {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background-color: rgba(3, 15, 37, 0.65);
+      border: 3px solid rgba(148, 163, 184, 0.15);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .hover-card {
+      transition: all 0.3s ease;
+    }
+    .hover-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 50%;
+      background-color: #38bdf8;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    .nav-link:hover::after { width: 100%; }
+    .logo-image {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .footer-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .footer-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 50%;
+      background-color: #38bdf8;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    .footer-link:hover::after { width: 100%; }
+    .text-enhanced {
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body class="text-white min-h-screen flex flex-col">
+<nav class="fixed w-full top-0 z-50 glass border-b border-gray-700/50">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-between h-16">
+      <a href="/" class="flex items-center">
+        <img src="../assets/images/max-stare.jpeg" alt="Max" class="logo-image">
+      </a>
+      <div class="hidden sm:flex sm:space-x-8 items-center">
+        <a href="/" class="nav-link text-gray-300 hover:text-sky-400 px-3 py-2 text-base">Home</a>
+        <a href="/projects" class="nav-link text-gray-300 hover:text-sky-400 px-3 py-2 text-base">Projects</a>
+        <a href="/setup" class="nav-link text-gray-300 hover:text-sky-400 px-3 py-2 text-base">My Setup</a>
+      </div>
+      <button type="button" onclick="toggleMenu()" class="text-gray-300 hover:text-sky-400 sm:hidden">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="hidden sm:hidden" id="mobileMenu">
+    <div class="px-2 pt-2 pb-3 space-y-1 border-t border-gray-700/50">
+      <a href="/" class="nav-link text-gray-300 hover:text-sky-400 block px-3 py-2 text-base">Home</a>
+      <a href="/projects" class="nav-link text-gray-300 hover:text-sky-400 block px-3 py-2 text-base">Projects</a>
+      <a href="/setup" class="nav-link text-gray-300 hover:text-sky-400 block px-3 py-2 text-base">My Setup</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container mx-auto px-4 py-8 mt-16 flex-grow">
+  <div class="max-w-6xl mx-auto space-y-16">
+    <section class="space-y-6">
+      <h2 class="text-3xl font-light text-sky-400 text-enhanced mb-8">Software Setup</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass p-6 rounded-lg border border-gray-600/50 hover-card">
+          <h2 class="text-2xl text-sky-300 mb-4 text-enhanced">Development Environments</h2>
+          <div class="space-y-4">
+            <div>
+              <h3 class="text-xl text-sky-300">JetBrains Suite</h3>
+              <ul class="text-gray-300 ml-4 space-y-2">
+                <li>• CLion - C/C++</li>
+                <li>• PyCharm - Python</li>
+                <li>• IntelliJ IDEA - Java</li>
+                <li>• Rider - C#/.NET</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl text-sky-300">VS Code</h3>
+              <ul class="text-gray-300 ml-4 space-y-2">
+                <li>• Web Development</li>
+                <li>• Rust with rust-analyzer</li>
+                <li>• Quick edits and Markdown</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl text-sky-300">Notepad++</h3>
+              <ul class="text-gray-300 ml-4 space-y-2">
+                <li>• Assembly</li>
+                <li>• JSON and XML</li>
+                <li>• Hex Editor</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass p-6 rounded-lg border border-gray-600/50 hover-card">
+          <h2 class="text-2xl text-sky-300 mb-4 text-enhanced">Configurations</h2>
+          <div class="space-y-4">
+            <div>
+              <h3 class="text-xl text-sky-300">Shell</h3>
+              <ul class="text-gray-300 ml-4 space-y-2">
+                <li>• ZSH with Oh My Zsh</li>
+                <li>• Powerlevel10k theme</li>
+                <li>• Nerd Fonts</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl text-sky-300">Terminal Emulators</h3>
+              <ul class="text-gray-300 ml-4 space-y-2">
+                <li>• macOS - iTerm2</li>
+                <li>• Windows - Windows Terminal</li>
+                <li>• Linux - Tilix</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl text-sky-300">Desktop Environments</h3>
+              <ul class="text-gray-300 ml-4 space-y-2">
+                <li>• macOS - Rectangle</li>
+                <li>• Fedora/Solus - Budgie</li>
+                <li>• Debian - Gnome (with lots of extensions)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-6">
+      <h2 class="text-3xl font-light text-sky-400 text-enhanced">Hardware Setup</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass p-6 rounded-lg border border-gray-600/50 hover-card">
+          <h3 class="text-2xl text-sky-300 mb-4">Desktop PC</h3>
+          <ul class="text-gray-300 space-y-2">
+            <li>• AMD Ryzen 7 5800X</li>
+            <li>• DDR4 32GB 3200MHz  </li>
+            <li>• AMD Radeon RX 6700 XT  </li>
+            <li>• 8TB Storage</li>
+            <li>• Windows 10 Pro/Fedora Budgie 41</li>
+          </ul>
+        </div>
+
+        <div class="glass p-6 rounded-lg border border-gray-600/50 hover-card">
+          <h3 class="text-2xl text-sky-300 mb-4">ThinkStation</h3>
+          <ul class="text-gray-300 space-y-2">
+            <li>• Intel Xeon E3-1240 v6</li>
+            <li>• NVIDIA Quadro P2000</li>
+            <li>• DDR4 32GB RAM</li>
+            <li>• 512GB NVME</li>
+            <li>• TrueNAS CE</li>
+          </ul>
+        </div>
+
+        <div class="glass p-6 rounded-lg border border-gray-600/50 hover-card">
+          <h3 class="text-2xl text-sky-300 mb-4">Audio Setup</h3>
+          <ul class="text-gray-300 space-y-2">
+            <li>• SMSL AO300 DAC & Amp</li>
+            <li>• Audio-Technica AT-LP3XBT Turntable</li>
+            <li>• Eris E3.5 Studio Monitor Speakers</li>
+            <li>• Monoprice 8-inch 200-Watt Subwoofer</li>
+          </ul>
+        </div>
+        <div class="glass p-6 rounded-lg border border-gray-600/50 hover-card">
+          <h3 class="text-2xl text-sky-300 mb-4">MacBook Air</h3>
+          <ul class="text-gray-300 space-y-2">
+            <li>• MacBook Air M1</li>
+            <li>• 16GB RAM</li>
+            <li>• 1TB SSD</li>
+            <li>• MacOS Sequoia/Asahi Linux</li>
+          </ul>
+        </div>
+        <div class="glass p-6 rounded-lg border border-gray-600/50 hover-card">
+          <h3 class="text-2xl text-sky-300 mb-4">ThinkPad</h3>
+          <ul class="text-gray-300 space-y-2">
+            <li>• T14 Gen 3 AMD</li>
+            <li>• AMD Ryzen 7 PRO 6850U</li>
+            <li>• DDR4 16GB RAM</li>
+            <li>• 1TB NVME</li>
+            <li>• Debian SID</li>
+          </ul>
+        </div>
+        <div class="glass p-6 rounded-lg border border-gray-600/50 hover-card">
+          <h3 class="text-2xl text-sky-300 mb-4">Peripherals</h3>
+          <ul class="text-gray-300 space-y-2">
+            <li>• HyperX Pulsefire Haste 2 Mouse</li>
+            <li>• Keychron Q6 Max with Gateron Red Switches</li>
+            <li>• Blue Yeti Microphone</li>
+            <li>• Logitech C920 HD Pro Webcam </li>
+            <li>• AV Access DisplayPort KVM Switch </li>
+          </ul>
+        </div>
+        <div class="glass p-6 rounded-lg border border-gray-600/50 hover-card">
+          <h3 class="text-2xl text-sky-300 mb-4">Primary NAS</h3>
+          <ul class="text-gray-300 space-y-2">
+            <li>• Synology DS218play NAS</li>
+            <li>• DSM 7</li>
+            <li>• 2x2TB HDDs (Raid 1)</li>
+            <li>• Primary Use: File Storage, Backups, & Syncthing</li>
+          </ul>
+        </div>
+
+        <div class="glass p-6 rounded-lg border border-gray-600/50 hover-card">
+          <h3 class="text-2xl text-sky-300 mb-4">Public NAS</h3>
+          <ul class="text-gray-300 space-y-2">
+            <li>• Synology DS220+ NAS</li>
+            <li>• DSM 7</li>
+            <li>• 2x4TB HDDs (Raid 1)</li>
+            <li>• Primary Use: Media Server, Website Hosting, & Torrents</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="glass border-t border-gray-700/50">
+  <div class="max-w-6xl mx-auto px-4 py-6">
+    <div class="flex justify-between items-center">
+      <div class="text-gray-400 text-sm">© 2024 Georgios Dialynas-Vatsis</div>
+      <div class="flex space-x-6">
+        <a href="https://github.com/sistav" class="footer-link text-gray-400 hover:text-sky-400">GitHub</a>
+        <a href="https://linkedin.com/in/georgios-dv" class="footer-link text-gray-400 hover:text-sky-400">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  }
+</script>
+</body>
+</html>

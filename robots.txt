@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /projects/
+Allow: /setup/
+Disallow: /assets/images/
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.png$
+Disallow: /*.gif$
+Disallow: /*.webp$
+
+Sitemap: https://vatsis.ca/sitemap.xml

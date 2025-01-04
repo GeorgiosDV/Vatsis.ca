@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Georgios Dialynas-Vatsis</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    html { min-height: 100vh; }
+    body {
+      min-height: 100vh;
+      position: relative;
+      background: #001b42;
+      background: -webkit-linear-gradient(to left, #00315c, #000428);
+      background: linear-gradient(to left, #00315c, #000428);
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(8, 13, 21, 0.7) 0%, rgba(12, 26, 46, 0.6) 100%);
+      z-index: -1;
+    }
+    .glass {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background-color: rgba(3, 15, 37, 0.65);
+      border: 3px solid rgba(148, 163, 184, 0.15);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    .hover-card {
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .hover-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 50%;
+      background-color: #38bdf8;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    .nav-link:hover::after { width: 100%; }
+    .logo-image {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .footer-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    .footer-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 50%;
+      background-color: #38bdf8;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    .link {
+      text-decoration-line: underline;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #38bdf8;
+      text-underline-offset: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .link:hover {
+      text-decoration-thickness: 2px;
+      color: #7dd3fc;
+    }
+    .footer-link:hover::after { width: 100%; }
+    .text-enhanced { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+    #noJsWarning { display: none; }
+    .noscript #projectsContent { display: none !important; }
+    .noscript #noJsWarning { display: block !important; }
+  </style>
+  <noscript><style>body {display: none !important; }</style></noscript>
+</head>
+<body class="text-white min-h-screen flex flex-col">
+<nav class="fixed w-full top-0 z-50 glass border-b border-gray-700/50">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex justify-between h-16">
+      <a href="/" class="flex items-center">
+        <img src="../assets/images/max-stare.jpeg" alt="Max" class="logo-image">
+      </a>
+      <div class="hidden sm:flex sm:space-x-8 items-center">
+        <a href="/" class="nav-link text-gray-300 hover:text-sky-400 px-3 py-2 text-base">Home</a>
+        <a href="/projects" class="nav-link text-gray-300 hover:text-sky-400 px-3 py-2 text-base">Projects</a>
+        <a href="/setup" class="nav-link text-gray-300 hover:text-sky-400 px-3 py-2 text-base">My Setup</a>
+      </div>
+      <button type="button" onclick="toggleMenu()" class="text-gray-300 hover:text-sky-400 sm:hidden">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="hidden sm:hidden" id="mobileMenu">
+    <div class="px-2 pt-2 pb-3 space-y-1 border-t border-gray-700/50">
+      <a href="/" class="nav-link text-gray-300 hover:text-sky-400 block px-3 py-2 text-base">Home</a>
+      <a href="/projects" class="nav-link text-gray-300 hover:text-sky-400 block px-3 py-2 text-base">Projects</a>
+      <a href="/setup" class="nav-link text-gray-300 hover:text-sky-400 block px-3 py-2 text-base">My Setup</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container mx-auto px-4 py-8 mt-16 flex-grow">
+  <div class="max-w-6xl mx-auto space-y-16">
+    <div id="noJsWarning" class="glass p-6 rounded-lg text-center">
+      <p class="text-xl text-gray-300 mb-4">You can find my projects over at GitHub</p>
+      <a href="https://github.com/sistav" class="link">Visit my GitHub Profile</a>
+    </div>
+    <div id="projectsContent">
+      <div class="space-y-6 mb-16">
+        <h1 class="text-5xl font-light text-sky-400 text-enhanced mb-8">Projects</h1>
+        <div class="glass p-6 rounded-lg border border-gray-600/50 hover-card">
+          <p class="text-gray-300 leading-relaxed">
+            Welcome to my projects page! Here you'll find a collection of my work posted on GitHub.
+            Make sure to check out the pinned 📌 repositories, they're the projects that I am most proud of.
+            At the bottom of the page you'll find some scripts that aren't big enough on their own to be a fully-featured project, but are still interesting regardless.
+          </p>
+        </div>
+      </div>
+      <div class="space-y-8">
+        <h2 class="text-3xl font-light text-sky-400 text-enhanced">Featured Projects</h2>
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+      </div>
+      <div class="space-y-8 mt-16">
+        <h2 class="text-3xl font-light text-sky-400 text-enhanced">Assorted Scripts</h2>
+        <div id="scriptsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="glass border-t border-gray-700/50">
+  <div class="max-w-6xl mx-auto px-4 py-6">
+    <div class="flex justify-between items-center">
+      <div class="text-gray-400 text-sm">© 2024 Georgios Dialynas-Vatsis</div>
+      <div class="flex space-x-6">
+        <a href="https://github.com/sistav" class="footer-link text-gray-400 hover:text-sky-400">GitHub</a>
+        <a href="https://linkedin.com/in/georgios-dv" class="footer-link text-gray-400 hover:text-sky-400">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hiddenProjects = ['Sistav'];
+  const pinnedProjects = ['Evil-Bot', 'MonkeyEncrypt', 'Raylib-Physics-Simulations', 'LittleManComputerEmulator'];
+
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  }
+
+  async function fetchProjects() {
+    try {
+      const response = await fetch('https://api.github.com/users/sistav/repos');
+      const repos = await response.json();
+      const sortedRepos = repos
+              .filter(repo => !hiddenProjects.includes(repo.name))
+              .sort((a, b) => {
+                const aPinned = pinnedProjects.includes(a.name);
+                const bPinned = pinnedProjects.includes(b.name);
+                if (aPinned && !bPinned) return -1;
+                if (!aPinned && bPinned) return 1;
+                return new Date(b.updated_at) - new Date(a.updated_at);
+              });
+
+      const projectsGrid = document.getElementById('projectsGrid');
+      projectsGrid.innerHTML = '';
+      sortedRepos.forEach(repo => {
+        const projectCard = createProjectCard(repo);
+        projectsGrid.appendChild(projectCard);
+      });
+    } catch (error) {
+      console.error('Error fetching projects:', error);
+    }
+  }
+
+  async function fetchGists() {
+    try {
+      const response = await fetch('https://api.github.com/users/sistav/gists');
+      const gists = await response.json();
+      const scriptsGrid = document.getElementById('scriptsGrid');
+      scriptsGrid.innerHTML = '';
+      gists.forEach(gist => {
+        const gistCard = createGistCard(gist);
+        scriptsGrid.appendChild(gistCard);
+      });
+    } catch (error) {
+      console.error('Error fetching gists:', error);
+    }
+  }
+
+  function createProjectCard(repo) {
+    const div = document.createElement('div');
+    const isPinned = pinnedProjects.includes(repo.name);
+    div.innerHTML = `
+    <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="block glass p-6 rounded-lg border border-gray-600/50 hover-card no-underline h-full">
+      <div class="flex justify-between items-start mb-4">
+        <h3 class="text-xl text-sky-300 text-enhanced">
+          ${repo.name}${isPinned ? '<span class="ml-2 text-yellow-400">📌</span>' : ''}
+        </h3>
+      </div>
+      <p class="text-gray-300 mb-4 flex-grow">${repo.description || 'No description available.'}</p>
+      <div class="flex flex-wrap gap-2">
+        ${repo.language ? `<span class="px-2 py-1 text-sm rounded-full bg-gray-700/50 text-gray-300">${repo.language}</span>` : ''}
+        <span class="px-2 py-1 text-sm rounded-full bg-gray-700/50 text-gray-300">${new Date(repo.updated_at).toLocaleDateString()}</span>
+      </div>
+    </a>`;
+    return div;
+}
+
+  function createGistCard(gist) {
+    const div = document.createElement('div');
+    const filename = Object.keys(gist.files)[0];
+    const file = gist.files[filename];
+    div.innerHTML = `
+    <a href="${gist.html_url}" target="_blank" rel="noopener noreferrer" class="block glass p-6 rounded-lg border border-gray-600/50 hover-card no-underline h-full">
+      <div class="flex justify-between items-start mb-4">
+        <h3 class="text-xl text-sky-300 text-enhanced">${filename}</h3>
+      </div>
+      <p class="text-gray-300 mb-4 flex-grow">${gist.description || 'No description available.'}</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-2 py-1 text-sm rounded-full bg-gray-700/50 text-gray-300">${file.language || 'Text'}</span>
+        <span class="px-2 py-1 text-sm rounded-full bg-gray-700/50 text-gray-300">${new Date(gist.created_at).toLocaleDateString()}</span>
+      </div>
+    </a>`;
+    return div;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (!document.body.classList.contains('noscript')) {
+      fetchProjects();
+      fetchGists();
+    }
+  });
+</script>
+</body>
+</html>
