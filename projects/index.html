@@ -181,7 +181,7 @@
 
   async function fetchProjects() {
     try {
-      const response = await fetch('https://api.github.com/users/sistav/repos');
+      const response = await fetch('https://api.github.com/users/georgiosDV/repos');
       const repos = await response.json();
       const sortedRepos = repos
               .filter(repo => !hiddenProjects.includes(repo.name))
@@ -206,7 +206,7 @@
 
   async function fetchGists() {
     try {
-      const response = await fetch('https://api.github.com/users/sistav/gists');
+      const response = await fetch('https://api.github.com/users/georgiosDV/gists');
       const gists = await response.json();
       const scriptsGrid = document.getElementById('scriptsGrid');
       scriptsGrid.innerHTML = '';
