@@ -28,7 +28,10 @@ body {
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   z-index: -1;
   background:
     linear-gradient(rgba(var(--bg-rgb), 0.88), rgba(var(--bg-rgb), 0.88)),
@@ -160,6 +163,7 @@ footer { border-top: 1px solid var(--line); margin-top: 1rem; }
 .reveal.in { opacity: 1; transform: none; }
 
 @media (max-width: 640px) {
+  body { background-size: 300vw auto; background-position: center top; }
   .nav-links { display: none; }
   .hamburger { display: inline-flex; }
   .cards { grid-template-columns: 1fr; }
@@ -168,7 +172,7 @@ footer { border-top: 1px solid var(--line); margin-top: 1rem; }
   .prose { display: flex; flex-direction: column; }
   .float-img {
     order: 1; float: none; width: 100%;
-    aspect-ratio: 16 / 9; object-fit: cover; object-position: top;
+    aspect-ratio: 4 / 3; object-fit: cover; object-position: top;
     margin: 1.5rem 0 0;
   }
   .gallery { grid-template-columns: 1fr 1fr; }
