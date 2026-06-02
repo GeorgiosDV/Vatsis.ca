@@ -19,13 +19,20 @@
 html { font-size: 112.5%; scroll-behavior: smooth; }
 body {
   min-height: 100vh;
-  background:
-    linear-gradient(rgba(var(--bg-rgb), 0.88), rgba(var(--bg-rgb), 0.88)),
-    url('assets/images/background-min.jpg') center center / cover no-repeat fixed;
+  background: rgb(var(--bg-rgb));
   color: var(--text);
   font-family: var(--body);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(rgba(var(--bg-rgb), 0.88), rgba(var(--bg-rgb), 0.88)),
+    url('assets/images/background-min.jpg') center center / cover no-repeat;
 }
 
 .name, .page-title, .label, .edu h3, .card h3,
