@@ -159,6 +159,15 @@ footer { border-top: 1px solid var(--line); margin-top: 1rem; }
 .foot-inner .c { color: var(--muted); font-size: .85rem; }
 .foot-inner a { margin-left: 1.5rem; font-size: .9rem; }
 
+.noscript-note {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  color: var(--text-prose);
+  background: rgba(220, 53, 69, 0.1);
+  border: 1px solid rgba(220, 53, 69, 0.5);
+  border-radius: 8px;
+}
+
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.in { opacity: 1; transform: none; }
 
